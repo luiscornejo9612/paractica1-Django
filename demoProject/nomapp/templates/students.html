@@ -1,0 +1,58 @@
+<!-- teachers.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px; /* Ajusta el espaciado de las celdas según necesites */
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    
+    {% include 'header.html' %}
+    <a href="{% url 'students'  %}" style="display: block; margin: 10px 0px 10px 0px; font-size: 25px; text-decoration: none;"> Estudiants</a>
+    <a href="{% url 'teachers'  %}" style="display: block; margin: 10px 0px 10px 0px; font-size: 25px; text-decoration: none;"> Professors</a>
+
+    <h1>Lista de students</h1>
+    <table >
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Rol</th>
+                <th>Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in dataStudents %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.nom }}</td>
+                <td>{{ student.Rol }}</td>
+                <td><a href="{% url 'students' student.id %}" style="text-decoration: none;"> + INFO </a></td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

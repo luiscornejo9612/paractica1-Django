@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Estudiante</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <a href="{% url 'students'  %}" style="display: block; margin: 10px 0px 10px 0px; font-size: 25px; text-decoration: none;"> Estudiants</a>
+    <a href="{% url 'teachers'  %}" style="display: block; margin: 10px 0px 10px 0px; font-size: 25px; text-decoration: none;"> Professors</a>
+    <h1>Información del Estudiante</h1>
+    {% if student_info %}
+    <ul>
+        <li><strong>ID:</strong> {{ student_info.id }}</li>
+        <li><strong>Nombre:</strong> {{ student_info.nom }}</li>
+        <li><strong>Apellido:</strong> {{ student_info.Cognom }}</li>
+        <li><strong>Edad:</strong> {{ student_info.edat }}</li>
+        <li><strong>Rol:</strong> {{ student_info.Rol }}</li>
+        <li><strong>Curso:</strong> {{ student_info.curs }}</li>
+    </ul>
+    {% else %}
+    <p>Estudiante no encontrado</p>
+    {% endif %}
+</body>
+</html>
