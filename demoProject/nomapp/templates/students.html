@@ -43,16 +43,23 @@
             </tr>
         </thead>
         <tbody>
+
             {% for student in dataStudents %}
             <tr>
                 <td>{{ student.id }}</td>
                 <td>{{ student.nom }}</td>
-                <td>{{ student.Rol }}</td>
+                <td>{{ student.rol }}</td>
                 <td><a href="{% url 'students' student.id %}" style="text-decoration: none;"> + INFO </a></td>
-                
+                <td><a href="{% url 'update-user' student.id %}">EDIT</a></td>
+                <td><a href="{% url 'delete-user' student.id %}">DELETE</a></td>
+
             </tr>
             {% endfor %}
+
         </tbody>
     </table>
+
+    <a href="{% url 'user_form' %}">Afegir Usuaris</a>
+    <h1>Primer projecte</h1>
 </body>
 </html>

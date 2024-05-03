@@ -14,13 +14,13 @@
     <ul>
         <li><strong>ID:</strong> {{ student_info.id }}</li>
         <li><strong>Nombre:</strong> {{ student_info.nom }}</li>
-        <li><strong>Apellido:</strong> {{ student_info.Cognom }}</li>
-        <li><strong>Edad:</strong> {{ student_info.edat }}</li>
-        <li><strong>Rol:</strong> {{ student_info.Rol }}</li>
-        <li><strong>Curso:</strong> {{ student_info.curs }}</li>
+        <li><strong>Cognom:</strong> {{ student_info.cognom }}</li>
+        <li><strong>Rol:</strong> {{ student_info.rol }}</li>
+        <li><strong>Curso:</strong> {{ student_info.assignatures }}</li>
     </ul>
     {% else %}
     <p>Estudiante no encontrado</p>
     {% endif %}
+    
 </body>
 </html>

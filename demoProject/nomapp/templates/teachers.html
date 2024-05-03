@@ -37,9 +37,8 @@
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
-                <th>Edad</th>
                 <th>Rol</th>
-                <th>curs</th>
+                <th>Curs</th>
             </tr>
         </thead>
         <tbody>
@@ -47,10 +46,11 @@
             <tr>
                 <td>{{ teacher.id }}</td>
                 <td>{{ teacher.nom }}</td>
-                <td>{{ teacher.Cognom }}</td>
-                <td>{{ teacher.edat }}</td>
-                <td>{{ teacher.Rol }}</td>
-                <td>{{ teacher.curs }}</td>
+                <td>{{ teacher.cognom }}</td>
+                <td>{{ teacher.rol }}</td>
+                <td>{{ teacher.assignatures }}</td>
+                <td><a href="{% url 'update-user' teacher.id %}">EDIT</a></td>
+                <td><a href="{% url 'delete-user' teacher.id %}">DELETE</a></td>
             </tr>
             {% endfor %}
         </tbody>

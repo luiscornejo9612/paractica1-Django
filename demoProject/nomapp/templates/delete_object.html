@@ -1,0 +1,9 @@
+{% include 'header.html' %}
+<h1>Formulari PROVA</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>seguro que quieres eliminar a "{{ object.nom }}" ?</p>
+    <button><a href="{% url 'students' %}">TORNAR</a></button>
+    <input type="submit" value="CONFIRM">
+</form>
