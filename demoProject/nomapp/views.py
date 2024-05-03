@@ -51,6 +51,8 @@ def user_form(request):
     context = {'form':form}
     return render(request, 'form.html', context)
 
+
+
 def update_user(request, pk):
     person = models.Usuari.objects.get(id = pk)
     form = UsuariForm(instance=person)
@@ -63,6 +65,9 @@ def update_user(request, pk):
         
     context = {'form':form}
     return render(request, 'form.html', context)
+
+
+
 
 def delete_user (request, pk):
     person = models.Usuari.objects.get(id = pk)
